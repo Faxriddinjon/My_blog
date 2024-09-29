@@ -1,0 +1,33 @@
+<nav class="p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="{% url 'home' %}" class="text-black hover:text-blue text-xl font-bold hover:no-underline">MyWebsite</a>
+      
+      <!-- Links -->
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="{% url 'home' %}" class="text-black hover:text-blue hover:no-underline">Home</a></li>
+        <li><a href="{% url 'blogs' %}" class="text-black hover:text-blue hover:no-underline">Blog</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-black focus:outline-none" id="menu-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul class="md:hidden mt-4 space-y-2 hidden" id="mobile-menu">
+        <li><a href="{% url 'home' %}" class="text-black hover:text-blue hover:no-underline">Home</a></li>
+        <li><a href="{% url 'blogs' %}" class="text-black hover:text-blue hover:no-underline">Blog</a></li>
+    </ul>
+  </nav>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>

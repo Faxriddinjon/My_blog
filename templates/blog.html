@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+
+    <div class="m-20 p-10 flex flex-col items-center justify-center">
+        <p class="font-bold text-3xl"> {{ blog.name }}</p>
+        <div class="w-full m-2">
+            <p class="text-start"> {{ blog.date|date:"M j, Y" }} </p>
+        </div>
+        <br>
+        <br>
+        <img width="400"  src="{{ blog.image.url }}" alt="">
+        <br>
+        <p class="text-xl text-black">{{ blog.text }}</p>
+    </div>
+
+{% endblock %}
